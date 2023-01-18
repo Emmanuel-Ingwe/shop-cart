@@ -14,6 +14,11 @@ export function CartProvider({ children }) {
 
     const contextValue = {
         items: [],
+        getProductQuantity,
+        addOneToCart,
+        removeOneFromCart,
+        deleteFromCart,
+        getTotalCost
     };
 
     return (
