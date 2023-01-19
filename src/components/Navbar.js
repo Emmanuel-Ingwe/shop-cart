@@ -1,7 +1,7 @@
 import { Button, Container, Navbar, Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
 import { CartContext } from "../CartContext";
-// import CartProduct from './CartProduct';
+import CartProduct from './CartProduct';
 
 const NavbarComponent = () => {
     const cart = useContext(CartContext);
@@ -26,7 +26,6 @@ const NavbarComponent = () => {
                     <Modal.Title>Shopping Cart</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <h1>This</h1>
                     {productsCount > 0 ?
                         <>
                             <p>Items in your cart:</p>
@@ -36,7 +35,7 @@ const NavbarComponent = () => {
 
                             <h1>Total: {cart.getTotalCost().toFixed(2)}</h1>
 
-                            <Button variant="success" onClick={checkout}>
+                            <Button variant="success" onClick>
                                 Purchase items!
                             </Button>
                         </>
