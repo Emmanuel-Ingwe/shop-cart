@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { productsArray, getProductData } from "./productsStore";
+import { getProductData } from "./productsStore";
 
 
 export const CartContext = createContext({
@@ -76,18 +76,21 @@ export function CartProvider({ children }) {
         setCartProducts(
             cartProducts =>
                 cartProducts.filter(currentProduct => {
-                    return currentProduct.id != id;
+                    return currentProduct.id !== id;
                 })
         );
     }
 
     function getTotalCost() {
         let totalCost = 0;
-        cartProducts.map((cartItem) => {
+        cartProducts?.map((cartItem) => {
             const productData = getProductData(cartItem.id);
-            totalCost += (productData.price * cartItem.quantity);
+            totalCost += (productData?.price * cartItem?.quantity);
         });
-        return totalCost;
+
+        return (
+            totalCost
+        );
     }
 
     const contextValue = {
