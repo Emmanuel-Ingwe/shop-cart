@@ -16,7 +16,7 @@ const productsArray = [
     {
         id: "price_1MRuWKHTTjgnB8fdboMtPlW4",
         title: "Camera",
-        price: 39.99
+        price: 39.999
     }
 ];
 
